@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87863B5F-29D0-4D8E-B59C-834AE53A732C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BinarySerializer</RootNamespace>
+    <AssemblyName>BinarySerializer</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\InitializationConstructorAttribute.cs" />
+    <Compile Include="Attributes\OneOfAttribute.cs" />
+    <Compile Include="Binary.cs" />
+    <Compile Include="BinaryFormatter.cs" />
+    <Compile Include="Extensions\BindingFlagsEx.cs" />
+    <Compile Include="Extensions\ILGeneratorEx.cs" />
+    <Compile Include="Formatters\Arrays\ArrayFormatter.cs" />
+    <Compile Include="Formatters\Objects\ObjectInfo.cs" />
+    <Compile Include="Formatters\DeserializationFunc.cs" />
+    <Compile Include="Formatters\Enums\EnumFormatter.cs" />
+    <Compile Include="Formatters\FuncFormatter.cs" />
+    <Compile Include="Formatters\GenericFormatter.cs" />
+    <Compile Include="Formatters\GenericFormatter_1.cs" />
+    <Compile Include="Formatters\GetSizeFunc.cs" />
+    <Compile Include="Formatters\IFormatter.cs" />
+    <Compile Include="Formatters\Arrays\MultidimensionalArrayFormatter.cs" />
+    <Compile Include="Formatters\Objects\ObjectFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\BooleanArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\ByteArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\CharArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\DoubleArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\Int16ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\Int32ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\Int64ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\SByteArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\SingleArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\StringArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\UInt16ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\UInt32ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Arrays\UInt64ArrayFormatter.cs" />
+    <Compile Include="Formatters\Primitives\BooleanFormatter.cs" />
+    <Compile Include="Formatters\Primitives\ByteFormatter.cs" />
+    <Compile Include="Formatters\Primitives\CharFormatter.cs" />
+    <Compile Include="Formatters\Primitives\DoubleFormatter.cs" />
+    <Compile Include="Formatters\Primitives\Int16Formatter.cs" />
+    <Compile Include="Formatters\Primitives\Int32Formatter.cs" />
+    <Compile Include="Formatters\Primitives\Int64Formatter.cs" />
+    <Compile Include="Formatters\Primitives\PrimitiveType.cs" />
+    <Compile Include="Formatters\Primitives\PrimitiveTypes.cs" />
+    <Compile Include="Formatters\Primitives\SByteFormatter.cs" />
+    <Compile Include="Formatters\Primitives\SingleFormatter.cs" />
+    <Compile Include="Formatters\Primitives\StringFormatter.cs" />
+    <Compile Include="Formatters\Primitives\UInt16Formatter.cs" />
+    <Compile Include="Formatters\Primitives\UInt32Formatter.cs" />
+    <Compile Include="Formatters\Primitives\UInt64Formatter.cs" />
+    <Compile Include="Formatters\SerializationFunc.cs" />
+    <Compile Include="Formatters\Arrays\SZArrayFormatter.cs" />
+    <Compile Include="Formatters\Unions\UnionFormatter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formatters\Arrays\Primitives\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
